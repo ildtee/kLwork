@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+<meta charset="UTF-8">
+<title>添加</title>
+<style type="text/css">
+#html{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#body{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#table {
+	width: 1149px; height : 650px; margin-top : 20px;
+	margin-left: 20px;
+	height: 650px;
+	margin-top: 20px;
+}
+
+#kuan {
+	width: 446px;
+	height: 51px;
+}
+
+#zhai {
+	width: 66px;
+height: 100px;
+}
+#div1{
+	height: 100%;
+	width: 100%;
+}
+#div2{
+	width: 989px;
+height: 545px;
+margin-left: 170px;
+margin-top: -651px;
+border: 1px blue solid;
+}
+#div3{
+	width: 1445px;
+height: 104px;
+margin-left: 20px;
+margin-top: -651px;
+background: 
+}
+#div4{
+	width: auto;
+height: 180px;
+margin-top: -728px;
+margin-left: 0px;
+border: 1px red solid;
+background: url("../static/images/top.png");
+}
+#zeng{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#shan{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#gai{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#cha{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#zhuye{
+	width: 52px;
+	height: 32px;
+	margin-left:20px;
+	margin-top:20px;
+	background-color: black;
+	opacity: 1;
+	color: pink;
+	border: 1px black;
+	font-size: larger;
+}
+
+</style>
+</head>
+<body id="body">
+<div id="div1">
+	<table id="table">
+		<tr>
+			<td id="zhai">1</td>
+			<td id="kuan">2</td>
+		</tr>
+		<tr>
+			<td>
+				<form action="addstu" method="get">
+					<span> <input id="zeng" type="submit" name="submit1" value="增加">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<form action="delstu" method="get">
+					<span> <input id="shan" type="submit" name="submit2" value="删除">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<form action="altstu" method="get">
+					<span> <input id="gai" type="submit" name="submit3" value="更改">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<form action="selstu" method="get">
+					<span> <input id="cha" type="submit" name="submit4" value="查询">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+	</table>
+</div>
+<div id="div2" align="center">
+
+	
+
+<form action="stu_insert" method="get"><br><br><br>
+    <span>
+        学生id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="stu_id">
+    </span>
+    <br>
+    <br>
+    <span>
+        学生姓名:<input type="text" name="stu_name">
+    </span>
+    <br>
+    <br>
+    <span>
+        学生性别:<input type="radio" name="stu_sex" value="男">男<input type="radio" name="stu_sex" value="女">女&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <br>
+    <br>
+    <span>
+        学生年龄:<input type="text" name="stu_age">
+    </span>
+    <br>
+    <br>
+    <span>
+        学生学号:<input type="text" name="stu_num">
+    </span>
+    <br>
+    <br>
+    <span>
+        <input type="submit" name="submit1" value="添加">
+    </span>
+</form>
+</div>
+<div id=div4>
+	<form action="index" method="get">
+    <span>
+        <!-- <input id="zhuye" type="submit" name="submit1" value="主页"> -->
+        <a id="zhuye" href="index.html">主页</a>
+    </span>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

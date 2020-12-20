@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<style type="text/css">
+#html{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#body{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#table {
+	width: 1149px; height : 650px; margin-top : 20px;
+	margin-left: 20px;
+	height: 650px;
+	margin-top: 20px;
+}
+
+#kuan {
+	width: 446px;
+	height: 51px;
+}
+
+#zhai {
+	width: 66px;
+height: 100px;
+}
+#div1{
+	height: 100%;
+	width: 100%;
+}
+#div2{
+	width: 989px;
+height: 545px;
+margin-left: 170px;
+margin-top: -651px;
+border: 1px blue solid;
+}
+#div4{
+	width: auto;
+height: 179px;
+margin-top: -726px;
+margin-left: 0px;
+border: 1px red solid;
+background: url("../static/images/top.png");
+}
+#zeng{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#shan{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#gai{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#cha{
+	background-color: white;
+	border: 1px white solid;
+	font-style: italic;
+	font-weight: 900;
+}
+#photo{
+	width: 52px;
+height: 32px;
+margin-left: 23px;
+margin-top: 20px;
+opacity: 0;
+}
+#tijiao{
+	width: 52px;
+	height: 32px;
+	margin-left:20px;
+	background:black;
+	margin-top:20px;
+	color: pink;
+	border: 1px black;
+	font-size: larger;
+}
+#div5{
+	width: 52px;
+height: 32px;
+margin-left: 31px;
+margin-top: -146px;
+}
+
+</style>
+</head>
+<body id="body">
+<div id="div1">
+	<table id="table">
+		<tr>
+			<td id="zhai">1</td>
+			<td id="kuan">2</td>
+		</tr>
+		<tr>
+			<td>
+				<form action="addstu" method="get">
+					<span> <input id="zeng"  type="submit" name="submit1" value="增加">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<form action="delstu" method="get">
+					<span> <input id="shan" type="submit" name="submit2" value="删除">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<form action="altstu" method="get">
+					<span> <input id="gai" type="submit" name="submit3" value="更改">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<form action="selstu" method="get">
+					<span> <input id="cha" type="submit" name="submit4" value="查询">
+					</span>
+				</form>
+			</td>
+
+		</tr>
+	</table>
+</div>
+<div id="div2">
+
+		<div id="div3">
+		<img id="img" alt="找不到路径" src="../static/images/black.png">
+	</div>
+
+	<script type="text/javascript">
+		var dEle=document.getElementById("img");
+		var arr=["images/black.png","images/blue.png","images/red.png","images/yellow.png"];
+		var i=0;
+		setInterval(function(){
+			if(i==arr.length-1){
+				i=0;
+			}
+			dEle.src=arr[i];
+			i++;
+		}, 1000);
+	</script>
+</div>
+<div id=div4>
+	<form enctype="multipart/form-data" action="uploadFile" method="post">
+   <input id="photo" type="file" name="myfile" value="请选择照片"/>
+   <br/>
+   <input id="tijiao" type="submit" value="上传"/>
+</form>
+{%csrf_token%}
+</div>	
+
+<div id="div5">
+	<span style="color: pink;font-size: larger">成绩</span>
+</div>
+
+
+
+
+
+
+</body>
+</html>

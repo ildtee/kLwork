@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>成绩查找</title>
+    <style type="text/css">
+    	#div4{
+	width: auto;
+height: 179px;
+margin-top: -59px;
+margin-left: 0px;
+border: 1px red solid;
+background: url("../static/images/top.png");
+}
+#html{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#body{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#div3{
+	  width: 97px;
+height: 58px;
+margin-top: -726px;
+margin-left: -1px;
+}
+
+#div2{
+	width: 989px;
+height: 545px;
+margin-left: 170px;
+margin-top: 178px;
+border: 1px blue solid;
+}
+#zhuye{
+	width: 52px;
+	height: 32px;
+	margin-left:20px;
+	margin-top:20px;
+	background-color: black;
+	opacity: 1;
+	color: pink;
+	border: 1px black;
+	font-size: larger;
+}
+    </style>
+</head>
+<body id="body">
+<div id="div2" align="center">
+	
+                <form action="score_sel1" method="get"><br><br><br>
+                    <span>
+                        请输入学生id:<input type="text" name="stu_id">
+                    </span>
+                    <br>
+                    <br>
+                    <span>
+                        <input type="submit" name="submit1" value="查询">
+                    </span>
+                    <br>
+                    <br>
+                </form>
+
+    <tr>
+        <th>课程</th>    <th>成绩</th>
+    </tr>
+    <br>
+{% for s in c %}
+
+        <td>{{ s.stu_clas }}</td>
+        <td>{{ s.stu_score }}</td>
+
+{% endfor %}
+
+
+<form action="score_insert" method="get">
+    <span>
+        <input type="submit" name="submit1" value="增加课程">
+    </span>
+</form>
+<form action="score_update" method="get">
+    <span>
+        <input type="submit" name="submit2" value="更改课程信息">
+    </span>
+</form>
+
+</tr>
+</form>
+</div>
+<div id="div3">
+	<form action="index" method="get">
+    <span>
+       <!--  <input id="zhuye" type="submit" name="submit1" value="主页"> -->
+        <a id="zhuye" href="index.html">主页</a>
+    </span>
+</form>
+</div>
+<div id="div4"></div>
+</body>
+</html>
