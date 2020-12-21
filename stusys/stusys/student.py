@@ -41,7 +41,7 @@ class student:
             return HttpResponse("不存在该学生信息")
         else:
             c = cursor.fetchall()
-            print(c)
+            print(type(c))
             return render(request, 'selstu.html', {'c': c})
 
     def stu_update(request):

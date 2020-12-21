@@ -66,18 +66,21 @@ border: 1px blue solid;
                     <br>
                 </form>
 
-    <tr>
-        <th>课程</th>    <th>成绩</th>
-    </tr>
-    <br>
-{% for s in c %}
+    <table id="result">
+	<tr style="border: 1px ;">
+		<td style="border: 1px solid;">课程</td>
+		<td style="border: 1px solid;">成绩</td>
 
-        <td>{{ s.stu_clas }}</td>
-        <td>{{ s.stu_score }}</td>
-
-{% endfor %}
-
-
+	</tr>
+	<tr>
+     {% for s in c %}
+		                        <td style="border: 1px solid;">{{ s.0  }}</td>
+                                <td style="border: 1px solid;">{{ s.1 }}</td>
+         <br>
+     {% endfor %}
+	</tr>
+</table>
+    </form>
 <form action="score_insert" method="get">
     <span>
         <input type="submit" name="submit1" value="增加课程">
@@ -87,9 +90,6 @@ border: 1px blue solid;
     <span>
         <input type="submit" name="submit2" value="更改课程信息">
     </span>
-</form>
-
-</tr>
 </form>
 </div>
 <div id="div3">

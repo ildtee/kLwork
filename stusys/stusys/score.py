@@ -40,6 +40,7 @@ class score:
             return HttpResponse("不存在该学生信息")
         else:
             c = cursor.fetchall()
+            c = list(c)
             print(c)
             return render(request, 'selsc.html', {'c': c})
 

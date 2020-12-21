@@ -152,7 +152,7 @@ margin-top: -146px;
 
 	<script type="text/javascript">
 		var dEle=document.getElementById("img");
-		var arr=["images/black.png","images/blue.png","images/red.png","images/yellow.png"];
+		var arr=["../static/images/black.png","../static/images/blue.png","../static/images/red.png","../static/images/yellow.png"];
 		var i=0;
 		setInterval(function(){
 			if(i==arr.length-1){
@@ -168,8 +168,14 @@ margin-top: -146px;
    <input id="photo" type="file" name="myfile" value="请选择照片"/>
    <br/>
    <input id="tijiao" type="submit" value="上传"/>
-</form>
+    </form>
+    <br/>
 {%csrf_token%}
+                <form action="excel_export" method="get">
+					<span> <input id="zeng" type="submit" name="submit1" value="下载">
+					</span>
+				</form>
+
 </div>	
 
 <div id="div5">

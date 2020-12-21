@@ -49,7 +49,7 @@ import pymysql
 #登录页面
 def login(request):
     #指定要访问的页面，render的功能：讲请求的页面结果提交给客户端
-    return render(request,'login.html')
+    return render(request, 'loginuser.html')
 #注册页面
 def regiter(request):
     return render(request,'regiter.html')
@@ -143,84 +143,8 @@ def query(request):
     else:
         return HttpResponse('用户名或密码有误')
 
-
-#数据库操作
-
-
-# def stu_insert(request):
-#     a = request.GET  # 获取get()请求
-#     # print(a)
-#     # 通过get()请求获取前段提交的数据
-#     stu_ID = a.get('stu_id')
-#     stu_Name = a.get('stu_name')
-#     stu_Sex = a.get('stu_sex')
-#     stu_Age = a.get('stu_age')
-#     stu_Num = a.get('stu_num')
-#     # 连接数据库
-#     db = pymysql.connect(host='localhost',
-#                          user='root',
-#                          password='root'
-#                          )
-#     # 创建游标
-#     cursor = db.cursor()
-#     # SQL语句
-#     cursor.execute('use stusys')
-#     # 将用户名与密码插入到数据库中
-#     sql2 = 'insert into stu(stu_id ,stu_name ,stu_sex ,stu_age,stu_num) values(%s,%s,%s,%s,%s)'
-#     cursor.execute(sql2, (stu_ID, stu_Name ,stu_Sex ,stu_Age,stu_Num))
-#     db.commit()
-#     cursor.close()
-#     db.close()
-#     return render(request,'index.html')#转到首页
-
-# def stu_sel(request):
-#     a = request.GET
-#     stu_ID = a.get('stu_id')
-#     db = pymysql.connect(host="localhost", user="root", passwd="root", db="stusys", port=3306)
-#     cursor = db.cursor(pymysql.cursors.DictCursor)
-#     sql = "select * from stu where stu_id ='%s';"%stu_ID
-#     cursor.execute(sql)
-#
-#     if cursor.rowcount == 0:
-#         return HttpResponse("不存在该学生信息")
-#     else:
-#         c = cursor.fetchall()
-#         print(c)
-#         return render(request,'selstu.html',{'c':c})
-#
-#
-# def stu_update(request):
-#     a = request.GET
-#     stu_ID = a.get('stu_id')
-#     stu_Name = a.get('clas_name')
-#     stu_Sex = a.get('stu_sex')
-#     stu_Age = a.get('stu_age')
-#     stu_Num = a.get('stu_num')
-#     db = pymysql.connect(host="localhost", user="root", passwd="root", db="stusys", port=3306)
-#     cursor = db.cursor()
-#     sql1 = "update stu set stu_name='%s' WHERE stu_id='%s'" % (stu_Name,stu_ID)
-#     cursor.execute(sql1)
-#     sql2 = "update stu set stu_sex='%s' WHERE stu_id='%s'" % (stu_Sex, stu_ID)
-#     cursor.execute(sql2)
-#     sql3 = "update stu set stu_age='%s' WHERE stu_id='%s'" % (stu_Age, stu_ID)
-#     cursor.execute(sql3)
-#     sql4 = "update stu set stu_num='%s' WHERE stu_id='%s'" % (stu_Num, stu_ID)
-#     cursor.execute(sql4)
-#     db.commit()
-#     db.close()
-#     return HttpResponse('suessfully')
-#
-# def stu_del(request):
-#     a = request.GET
-#     stu_ID = a.get('stu_id')
-#     db = pymysql.connect(host="localhost", user="root", passwd="root", db="stusys", port=3306)
-#     cursor = db.cursor()
-#     sql = "delete from stu where stu_id = '%s'"% stu_ID
-#     cursor.execute(sql)
-#     db.commit()
-#     db.close()
-#     return render(request,'index.html')
-
+def excel_export(request):
+    return render(request,'index.html')
 
 
 
@@ -251,7 +175,7 @@ urlpatterns = [
     path('score_insert1',score.score_insert),#调用课程添加函数
     path('score_update',score_update),#切换到成绩更改页面
     path('sc_update',score.score_update),#调用成绩更改函数
-
+    path('excel_export',inout.excel_export),#下载学生表
 
 ]
 urlpatterns += staticfiles_urlpatterns()
